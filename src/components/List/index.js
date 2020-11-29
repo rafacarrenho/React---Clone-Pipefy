@@ -2,6 +2,8 @@ import React from "react";
 import { Container } from "./styles";
 import { MdAdd } from "react-icons/md";
 import Card from "../Card";
+import { Droppable } from "react-beautiful-dnd";
+
 const index = ({ data, index: listIndex }) => {
   return (
     <Container done={data.done}>
@@ -13,11 +15,25 @@ const index = ({ data, index: listIndex }) => {
           </button>
         )}
       </header>
-      <ul>
-        {data.cards.map((card, index) => (
-          <Card key={card.id} index={index} data={card} listIndex={listIndex} />
-        ))}
-      </ul>
+      <Droppable droppableId={data.title}>
+        {(provided, snapshot) => (
+          <ul
+            ref={provided.innerRef}
+            // style={getListStyle(snapshot.isDraggingOver)}
+            {...provided.droppableProps}
+          >
+            {data.cards.map((card, index) => (
+              <Card
+                key={card.id}
+                index={index}
+                data={card}
+                listIndex={listIndex}
+              />
+            ))}
+            {provided.placeholder}
+          </ul>
+        )}
+      </Droppable>
     </Container>
   );
 };
