@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 export function loadLists() {
   return [
     {
@@ -5,32 +7,14 @@ export function loadLists() {
       creatable: true,
       cards: [
         {
-          id: 1,
-          content: "Estudar ReactJS",
+          id: uuidv4(),
+          content: "Criar mais projetos divertidos",
           labels: ["#7159c1"],
           user: "User1",
         },
         {
-          id: 2,
-          content: "Estudar Redux e Redux Toolkit",
-          labels: ["#7159c1"],
-          user: "User1",
-        },
-        {
-          id: 3,
-          content: "Projetos práticos",
-          labels: ["#7159c1"],
-          user: "User1",
-        },
-        {
-          id: 4,
-          content: 'Estudar NextJS"',
-          labels: ["#54e1f7"],
-          user: "User1",
-        },
-        {
-          id: 5,
-          content: "Gravar testes e deploy ReactJS",
+          id: uuidv4(),
+          content: "Produzir mais conteúdos Open Source",
           labels: ["#54e1f7"],
           user: "User1",
         },
@@ -41,9 +25,15 @@ export function loadLists() {
       creatable: false,
       cards: [
         {
-          id: 6,
+          id: uuidv4(),
           content: "Recriando clone do Pipefy",
           labels: [],
+          user: "User1",
+        },
+        {
+          id: uuidv4(),
+          content: "Estudos Mobile",
+          labels: ["#54e1f7"],
           user: "User1",
         },
       ],
@@ -53,21 +43,10 @@ export function loadLists() {
       creatable: false,
       cards: [
         {
-          id: 7,
-          content: "Estudos com Backend",
+          id: uuidv4(),
+          content: "Estudar Backend",
           labels: ["#7159c1"],
           user: "User1",
-        },
-        {
-          id: 8,
-          content: "Estudos Mobile",
-          labels: ["#54e1f7"],
-          user: "User1",
-        },
-        {
-          id: 9,
-          content: "Testes Automatizados",
-          labels: [],
         },
       ],
     },
@@ -77,14 +56,40 @@ export function loadLists() {
       done: true,
       cards: [
         {
-          id: 10,
-          content: "FrontEnd",
-          labels: [],
+          id: uuidv4(),
+          content: "Dominar ReactJS",
+          labels: ["#7159c1"],
+          user: "User1",
         },
         {
-          id: 12,
-          content: "CSS - Sass - Less",
+          id: uuidv4(),
+          content: "Estudar Redux e Redux Toolkit",
+          labels: ["#7159c1"],
+          user: "User1",
+        },
+        {
+          id: uuidv4(),
+          content: 'Estudar NextJS"',
           labels: ["#54e1f7"],
+          user: "User1",
+        },
+        {
+          id: uuidv4(),
+          content: "Testes Automatizados",
+          labels: [],
+          user: "User1",
+        },
+        {
+          id: uuidv4(),
+          content: "Dominar Front End",
+          labels: [],
+          user: "User1",
+        },
+        {
+          id: uuidv4(),
+          content: "Dominar CSS e Sass",
+          labels: ["#54e1f7"],
+          user: "User1",
         },
       ],
     },

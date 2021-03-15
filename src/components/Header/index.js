@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container } from "./styles";
-const index = () => {
+const Header = () => {
   return (
     <Container>
       <h1>Clone Pipefy</h1>
@@ -9,4 +9,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Header;

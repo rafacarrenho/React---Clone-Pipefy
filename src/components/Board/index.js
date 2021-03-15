@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "./styles";
 import List from "../List";
 import { loadLists } from "../../services/api";
 import { useState } from "react";
 import BoardContext from "./context";
 import { DragDropContext } from "react-beautiful-dnd";
+import { v4 as uuidv4 } from "uuid";
 
 const data = loadLists();
 const Board = () => {
@@ -88,12 +89,36 @@ const Board = () => {
       });
   };
 
+  const addItemToList = (description) => {
+    const createdCard = {
+      content: description,
+      id: uuidv4(),
+      index: lists[0]?.cards?.length || 0,
+      labels: ["#54e1f7"],
+      user: "User1",
+    };
+
+    const newList = lists.map((list) => {
+      if (list.title === "Tarefas") {
+        list.cards.push(createdCard);
+      }
+      return list;
+    });
+
+    setLists(newList);
+  };
+
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <BoardContext.Provider value={{ lists }}>
         <Container>
           {lists?.map((list, index) => (
-            <List key={list.title} data={list} index={index} />
+            <List
+              key={list.title}
+              data={list}
+              index={index}
+              addItemToList={addItemToList}
+            />
           ))}
         </Container>
       </BoardContext.Provider>

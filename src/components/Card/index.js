@@ -19,7 +19,7 @@ const Card = ({ data, index, listIndex }) => {
           </header>
           <p>{data.content}</p>
           {data.user && (
-            <img src="https://i.pravatar.cc/150?img=69" alt="Avatar" />
+            <img src="https://github.com/rafacarrenho.png" alt="Avatar" />
           )}
         </Container>
       )}

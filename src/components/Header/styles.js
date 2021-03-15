@@ -1,10 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  height: 80px;
-  padding: 0 30px;
-  color: white;
-  background-color: green;
-  display: flex;
-  align-items: center;
+  ${({ theme }) => css`
+    height: 80px;
+    padding: 0 30px;
+    color: white;
+    background-color: ${theme.colors.primary};
+    display: flex;
+    align-items: center;
+  `}
 `;
