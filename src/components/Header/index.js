@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { Container } from "./styles";
+import { Container } from './styles';
 const Header = () => {
   return (
     <Container>
-      <h1>Clone Pipefy</h1>
+      <h1>Taskboard</h1>
     </Container>
   );
 };
